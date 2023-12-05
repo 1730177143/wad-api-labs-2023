@@ -8,7 +8,8 @@ const UserSchema = new Schema({
 });
 
 const passwordValidator = (password) => {
-    return password===/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+  const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+    return regex.test(password);
 }
 UserSchema.path("password").validate(passwordValidator);
 export default mongoose.model('User', UserSchema);
