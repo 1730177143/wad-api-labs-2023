@@ -4,7 +4,8 @@ export const getMovies = async () => {
     )
     return response.json()
   };
-  export const login = async (username, password) => {
+  
+export const login = async (username, password) => {
     const response = await fetch('http://localhost:8080/api/users', {
         headers: {
             'Content-Type': 'application/json'
